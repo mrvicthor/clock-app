@@ -1,5 +1,5 @@
 const API_KEY = import.meta.env.VITE_IPDATA_API_KEY;
-export async function fetchGeolocation() {
+const fetchGeolocation = async () => {
   const response = await fetch(`https://api.ipdata.co?api-key=${API_KEY}`);
   if (!response.ok) {
     throw new Error("Error fetching data");
@@ -7,7 +7,7 @@ export async function fetchGeolocation() {
   const result = await response.json();
   console.log(result);
   return result;
-}
+};
 
 // fetchGeolocation();
 
