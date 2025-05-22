@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --container-7xl: 80rem;
+}
+
+@layer components {
+  .clock-quote {
+    width: 48ch;
+  }
+  .clock-weather-logo {
+    height: 24px;
+    width: 24px;
+  }
+  .hide-clock-info {
+    transform: translateY(25rem);
+    display: none;
+  }
+  .show-clock-info {
+    transform: translateY(0);
+    display: block;
+  }
+  .hidden {
+    display: none;
+  }
+}

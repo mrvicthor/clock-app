@@ -1,0 +1,21 @@
+{
+  "name": "clock-app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "server": "ts-node server/index.ts",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "typescript": "~5.8.3",
+    "vite": "^6.3.5"
+  },
+  "dependencies": {
+    "@everapi/ipbase-js": "^1.0.8",
+    "@tailwindcss/vite": "^4.1.7",
+    "tailwindcss": "^4.1.7"
+  }
+}
