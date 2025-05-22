@@ -11,16 +11,22 @@ export function handleToggle(element: HTMLButtonElement) {
   const setToggle = () => {
     toggle = !toggle;
     span.innerHTML = toggle
-      ? `<img src="${arrowDown}" alt="toggle-button-icon" /> `
-      : `<img src="${arrowUp}" alt="toggle-button-icon" /> `;
+      ? `<img src="${arrowUp}" alt="toggle-button-icon" /> `
+      : `<img src="${arrowDown}" alt="toggle-button-icon" /> `;
     element.innerHTML = toggle ? "more" : "less";
     element.appendChild(span);
   };
 
   element.addEventListener("click", () => {
     quote.classList.toggle("hidden");
-    clockInfo.classList.toggle("translate-y-full");
-    clockInfo.classList.toggle("translate-y-0");
+    if (toggle) {
+      clockInfo.classList.remove("translate-y-full");
+      clockInfo.classList.add("translate-y-0");
+    } else {
+      clockInfo.classList.add("translate-y-full");
+      clockInfo.classList.remove("translate-y-0");
+    }
+
     setToggle();
   });
   setToggle();

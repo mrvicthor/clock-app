@@ -5,7 +5,6 @@ const fetchGeolocation = async () => {
     throw new Error("Error fetching data");
   }
   const result = await response.json();
-  console.log(result);
   return result;
 };
 
