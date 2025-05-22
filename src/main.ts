@@ -1,11 +1,11 @@
 import "./style.css";
-import typescriptLogo from "./typescript.svg";
-import viteLogo from "/vite.svg";
+// import typescriptLogo from "./typescript.svg";
+// import viteLogo from "/vite.svg";
 import sunLogo from "/assets/desktop/icon-sun.svg";
 import moonLogo from "/assets/desktop/icon-moon.svg";
-import arrowDown from "/assets/desktop/icon-arrow-down.svg";
-import arrowUp from "/assets/desktop/icon-arrow-up.svg";
-import { setupCounter } from "./counter.ts";
+// import arrowDown from "/assets/desktop/icon-arrow-down.svg";
+// import arrowUp from "/assets/desktop/icon-arrow-up.svg";
+// import { setupCounter } from "./counter.ts";
 import { presentDay, dayOfTheWeek, weekNumber } from "./formatDate.ts";
 import {
   time,
