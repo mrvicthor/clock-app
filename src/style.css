@@ -24,4 +24,12 @@
   .hidden {
     display: none;
   }
+  .custom-shadow {
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+  }
+  @media screen and (max-width: 28rem) {
+    .clock-quote {
+      width: 40ch;
+    }
+  }
 }
