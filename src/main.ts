@@ -1,7 +1,4 @@
 import "./style.css";
-import sunLogo from "/assets/desktop/icon-sun.svg";
-import moonLogo from "/assets/desktop/icon-moon.svg";
-import refreshIcon from "/assets/desktop/icon-refresh.svg";
 import { presentDay, dayOfTheWeek, weekNumber } from "./formatDate.ts";
 import {
   time,
@@ -24,12 +21,12 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
 <section class=" flex justify-center pt-14 pb-24 h-full">
 <div class="flex flex-col justify-between h-full px-4 md:px-16 lg:px-[10.3125rem] w-full">
 <article class="clock-quote space-y-[13px]">
-<div class="flex gap-2"><p class="text-white custom-shadow clock-quote-text leading-5"></p><img id="refreshQuotes" class="h-4 w-4 cursor-pointer" src="${refreshIcon}" alt="refresh-logo"/></div>
+<div class="flex gap-2"><p class="text-white custom-shadow clock-quote-text leading-5"></p><img id="refreshQuotes" class="h-4 w-4 cursor-pointer" src="/assets/desktop/icon-refresh.svg" alt="refresh-logo"/></div>
 <p class="text-white custom-shadow clock-author font-bold"></p>
 </article>
 <div class="text-white">
 <div class="flex gap-2 lg:gap-4 items-center"><img src="${
-  hour < 17 ? sunLogo : moonLogo
+  hour < 17 ? "/assets/desktop/icon-sun.svg" : "/assets/desktop/icon-moon.svg"
 }" alt="${
   hour < 17 ? "sun" : "moon"
 } logo" class="clock-weather-logo"/> <p class="uppercase text-sm tracking-[4px] custom-shadow">${greeting}<span class="hidden md:inline-block">, it's currently</span></p></div>

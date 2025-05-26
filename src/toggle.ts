@@ -1,5 +1,3 @@
-import arrowDown from "/assets/desktop/icon-arrow-down.svg";
-import arrowUp from "/assets/desktop/icon-arrow-up.svg";
 export let toggle: boolean = false;
 
 export function handleToggle(element: HTMLButtonElement) {
@@ -11,8 +9,8 @@ export function handleToggle(element: HTMLButtonElement) {
   const setToggle = () => {
     toggle = !toggle;
     span.innerHTML = toggle
-      ? `<img src="${arrowUp}" alt="toggle-button-icon" /> `
-      : `<img src="${arrowDown}" alt="toggle-button-icon" /> `;
+      ? `<img src="/assets/desktop/icon-arrow-up.svg" alt="toggle-button-icon" /> `
+      : `<img src="/assets/desktop/icon-arrow-down.svg" alt="toggle-button-icon" /> `;
     element.innerHTML = toggle ? "more" : "less";
     element.appendChild(span);
   };
