@@ -13,11 +13,7 @@ export const { time_zone, languages, country_code, city } =
 export const { abbr, current_time } = time_zone;
 const date = new Date(current_time);
 export const hour = date.getHours();
-const minutes = date.getMinutes();
 const code = languages[0].code;
-console.log(abbr, current_time, hour, minutes, country_code);
-console.log(code);
-console.log(time_zone);
 
 function convertToLocalTime(value: Date) {
   const localTime = value.toLocaleString(`${code}-${country_code}`, {

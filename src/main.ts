@@ -1,12 +1,7 @@
 import "./style.css";
-// import typescriptLogo from "./typescript.svg";
-// import viteLogo from "/vite.svg";
 import sunLogo from "/assets/desktop/icon-sun.svg";
 import moonLogo from "/assets/desktop/icon-moon.svg";
 import refreshIcon from "/assets/desktop/icon-refresh.svg";
-// import arrowDown from "/assets/desktop/icon-arrow-down.svg";
-// import arrowUp from "/assets/desktop/icon-arrow-up.svg";
-// import { setupCounter } from "./counter.ts";
 import { presentDay, dayOfTheWeek, weekNumber } from "./formatDate.ts";
 import {
   time,
@@ -18,8 +13,6 @@ import {
   time_zone,
 } from "./geolocation-api.ts";
 import { handleToggle } from "./toggle.ts";
-// import { getQuotes } from "./getQuotes.ts";
-// import { fetchQuote, quote, author } from "./getQuotes.ts";
 import { generateQuote } from "./quote.ts";
 
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
@@ -52,25 +45,25 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
     ? "bg-white/70 backdrop-blur-sm text-[#303030]"
     : "bg-[#000000]/70 backdrop-blur-sm text-white"
 } fixed left-0 right-0 bottom-0 transform translate-y-full transition-transform duration-700 ease-in-out">
-<div class="px-4 lg:px-[10.3125rem] gap-4 grid md:grid-cols-2 md:justify-items-center content-center h-full">
+<div class="px-4 gap-4 grid md:grid-cols-2 md:justify-items-center content-center h-full w-full">
 <div class="flex flex-col gap-4 md:gap-[2.625rem]">
-<div class="flex items-center justify-between md:flex-col md:items-start">
+<div class="flex items-center justify-between md:flex-col md:items-start md:gap-[9px]">
 <h2 class="text-[0.625rem] sm:text-xs uppercase tracking-[2px] md:tracking-[2.6px] lg:tracking-[3px]">current timezone</h2>
 <p class="font-bold md:text-[2.5rem] lg:text-[3.5rem]">${time_zone.name}</p>
 </div>
-<div class="flex items-center justify-between md:flex-col md:items-start">
+<div class="flex items-center justify-between md:flex-col md:items-start md:gap-[9px]">
 <h2 class="text-[0.625rem] sm:text-xs uppercase tracking-[2.6px] lg:tracking-[3px]">day of the year</h2>
 <p class="font-bold md:text-[2.5rem] lg:text-[3.5rem]">${presentDay}</p>
 </div>
 </div>
 <div class="flex flex-col gap-4 md:gap-[2.625rem] lg:border-l-[1px] ${
   hour < 17 ? "border-[#303030]" : "border-white"
-} lg:pl-[5.875rem]">
-<div class="flex items-center justify-between md:flex-col md:items-start">
+} lg:pl-[5.875rem] w-full">
+<div class="flex items-center justify-between md:flex-col md:items-start md:gap-[9px]">
 <h2 class="text-[0.625rem] md:text-xs uppercase tracking-[1.6px] lg:tracking-[3px]">day of the week</h2>
 <p class="font-bold md:text-[2.5rem] lg:text-[3.5rem]">${dayOfTheWeek}</p>
 </div>
-<div class="flex items-center justify-between md:flex-col md:items-start">
+<div class="flex items-center justify-between md:flex-col md:items-start md:gap-[9px]">
 <h2 class="text-[0.625rem] sm:text-xs uppercase tracking-[2.6px] lg:tracking-[3px]">week number</h2>
 <p class="font-bold md:text-[2.5rem] lg:text-[3.5rem]">${weekNumber}</p>
 </div>

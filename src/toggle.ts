@@ -20,7 +20,6 @@ export function handleToggle(element: HTMLButtonElement) {
   element.addEventListener("click", () => {
     quote.classList.toggle("hidden");
     if (toggle) {
-      console.log(toggle);
       clockInfo.classList.remove("translate-y-full");
       clockInfo.classList.add("translate-y-0");
     } else {
