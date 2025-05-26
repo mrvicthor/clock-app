@@ -24,27 +24,26 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
      ? "lg:bg-[url('/assets/desktop/bg-image-daytime.jpg')] md:bg-[url('/assets/tablet/bg-image-daytime.jpg')] bg-[url('/assets/mobile/bg-image-daytime.jpg')]"
      : "lg:bg-[url('/assets/desktop/bg-image-nighttime.jpg')] md:bg-[url('/assets/tablet/bg-image-nighttime.jpg')] bg-[url('/assets/mobile/bg-image-nighttime.jpg')]"
  } bg-cover h-dvh w-full">
-<section class="@container flex justify-center pt-14 pb-24 h-full">
-<div class="flex flex-col justify-between h-full px-4 md:px-16 lg:px-0 w-[23.4375rem] sm:w-[48rem] lg:w-[69.375rem] lg:max-w-[69.375rem]">
-<article class="clock-quote md:h-[25rem]">
+<section class=" flex justify-center pt-14 pb-24 h-full">
+<div class="flex flex-col justify-between h-full px-4 md:px-16 lg:px-[10.3125rem] w-full">
+<article class="clock-quote">
 <p class="text-white custom-shadow clock-quote">“The science of operations, as derived from mathematics more especially, is a science of itself, and has its own abstract truth and value.”</p>
 <p class="text-white custom-shadow font-bold">victor</p>
 </article>
-<section class="flex flex-col lg:justify-between h-[17rem] md:h-[22.9375rem] lg:h-[25rem]">
-<div class="text-white h-full">
+<div class="text-white">
 <div class="flex gap-2 lg:gap-4 items-center"><img src="${
   hour < 17 ? sunLogo : moonLogo
 }" alt="${
   hour < 17 ? "sun" : "moon"
 } logo" class="clock-weather-logo"/> <p class="uppercase text-sm tracking-[4px] custom-shadow">${greeting}<span class="hidden md:inline-block">, it's currently</span></p></div>
-<h1 class="font-bold text-[6.25rem] md:text-[6.9375rem] lg:text-[12.5rem] custom-shadow">${time} <span class="text-[1.75rem] font-thin">${abbr}</span></h1>
-<p class="uppercase font-bold text-sm md:text-2xl custom-shadow">in ${city}, ${country_code}</p>
+<p class="font-bold text-[6.25rem] md:text-[10.9375rem] lg:text-[12.5rem] custom-shadow">${time} <span class="text-[1.75rem] font-thin">${abbr}</span></p>
+<div class="flex justify-between flex-col lg:flex-row gap-12 md:gap-20">
+<p class="uppercase font-bold text-sm md:text-[1.125rem] lg:text-2xl custom-shadow">in ${city}, ${country_code}</p>
+<button id="toggle" type="button" class="group cursor-pointer w-[9.125rem] h-[2.4375rem] md:h-14 bg-white rounded-4xl flex justify-between pl-[1.3125rem] items-center pr-[0.5rem] text-[#000000] hover:text-[#999999] font-bold tracking-[0.3125rem] uppercase"></button>
 </div>
-<div class="relative">
-<button id="toggle" type="button" class="absolute cursor-pointer bottom-0 lg:right-0 w-[9.125rem] h-[2.4375rem] md:h-14 bg-white rounded-4xl flex justify-between pl-[1.3125rem] items-center pr-[0.5rem] text-[#303030] font-bold tracking-[0.3125rem] uppercase"></button>
 </div>
 </section>
-<section id="clock-info" class="clock-info w-full h-[16rem] md:h-[27.5rem] lg:h-[25rem] ${
+<section id="clock-info" class="clock-info w-full h-[16rem] md:h-[20rem] lg:h-[25rem] ${
   hour < 17
     ? "bg-white/70 backdrop-blur-sm text-[#303030]"
     : "bg-[#000000]/70 backdrop-blur-sm text-white"
@@ -83,6 +82,9 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
 
 // setupCounter(document.querySelector<HTMLButtonElement>("#counter")!);
 handleToggle(document.querySelector<HTMLButtonElement>("#toggle")!);
+window.addEventListener("vite:preloadError", (event) => {
+  window.location.reload(); // for example, refresh the page
+});
 
 // <div>
 //   // <h1 class="text-3xl text-red-400 font-bold underline">Hello world!</h1>

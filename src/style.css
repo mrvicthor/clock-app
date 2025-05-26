@@ -4,10 +4,25 @@
 @theme {
   --container-7xl: 80rem;
 }
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
+  p {
+    line-height: 1; /* tighter spacing */
+    margin: 0; /* remove default margin */
+  }
+}
 @layer components {
   .clock-quote {
     width: 48ch;
+  }
+
+  #toggle:hover span {
+    background: #999999;
   }
   .clock-weather-logo {
     height: 24px;

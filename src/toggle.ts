@@ -7,7 +7,7 @@ export function handleToggle(element: HTMLButtonElement) {
   const span = document.createElement("span")!;
   const clockInfo = document.getElementById("clock-info")!;
   span.classList =
-    "bg-[#303030] h-8 w-8 md:h-10 md:w-10 rounded-full flex items-center justify-center";
+    "bg-[#303030] h-8 w-8 md:h-10 group-hover:bg-[#999999] md:w-10 rounded-full flex items-center justify-center";
   const setToggle = () => {
     toggle = !toggle;
     span.innerHTML = toggle
