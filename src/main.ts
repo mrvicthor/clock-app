@@ -20,8 +20,8 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
    hour < 17
      ? "lg:bg-[url('/assets/desktop/bg-image-daytime.jpg')] md:bg-[url('/assets/tablet/bg-image-daytime.jpg')] bg-[url('/assets/mobile/bg-image-daytime.jpg')]"
      : "lg:bg-[url('/assets/desktop/bg-image-nighttime.jpg')] md:bg-[url('/assets/tablet/bg-image-nighttime.jpg')] bg-[url('/assets/mobile/bg-image-nighttime.jpg')]"
- } bg-cover h-dvh w-full">
-<section class=" flex justify-center pt-14 pb-24 h-full">
+ } bg-cover h-dvh">
+<section class="flex justify-center pt-14 pb-24 h-full">
 <div class="flex flex-col justify-between h-full px-4 md:px-16 lg:px-[10.3125rem] w-full">
 <article class="clock-quote space-y-[13px]">
 <div class="flex gap-2"><p class="text-white custom-shadow clock-quote-text leading-5"></p><img id="refreshQuotes" class="h-4 w-4 cursor-pointer" src="${refreshIcon}" alt="refresh-logo"/></div>
