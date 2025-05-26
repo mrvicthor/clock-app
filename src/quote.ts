@@ -13,11 +13,18 @@ export function generateQuote(
   const loadQuote = async () => {
     try {
       const { text, author } = await fetchQuote();
-      callback(text, author);
+      callback(shortenQuote(text), author);
     } catch (error) {
       console.log(error);
     }
   };
   element.addEventListener("click", () => loadQuote());
   loadQuote();
+}
+
+function shortenQuote(value: string): string {
+  const lengthToUse = 137;
+  return value.length > lengthToUse
+    ? value.slice(0, lengthToUse).trim() + "..."
+    : value;
 }
