@@ -3,6 +3,7 @@ import "./style.css";
 // import viteLogo from "/vite.svg";
 import sunLogo from "/assets/desktop/icon-sun.svg";
 import moonLogo from "/assets/desktop/icon-moon.svg";
+import refreshIcon from "/assets/desktop/icon-refresh.svg";
 // import arrowDown from "/assets/desktop/icon-arrow-down.svg";
 // import arrowUp from "/assets/desktop/icon-arrow-up.svg";
 // import { setupCounter } from "./counter.ts";
@@ -17,6 +18,9 @@ import {
   time_zone,
 } from "./geolocation-api.ts";
 import { handleToggle } from "./toggle.ts";
+// import { getQuotes } from "./getQuotes.ts";
+// import { fetchQuote, quote, author } from "./getQuotes.ts";
+import { generateQuote } from "./quote.ts";
 
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
  <main class="${
@@ -26,9 +30,9 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
  } bg-cover h-dvh w-full">
 <section class=" flex justify-center pt-14 pb-24 h-full">
 <div class="flex flex-col justify-between h-full px-4 md:px-16 lg:px-[10.3125rem] w-full">
-<article class="clock-quote">
-<p class="text-white custom-shadow clock-quote">“The science of operations, as derived from mathematics more especially, is a science of itself, and has its own abstract truth and value.”</p>
-<p class="text-white custom-shadow font-bold">victor</p>
+<article class="clock-quote space-y-[13px]">
+<div class="flex gap-2"><p class="text-white custom-shadow clock-quote-text leading-5"></p><img id="refreshQuotes" class="h-4 w-4 cursor-pointer" src="${refreshIcon}" alt="refresh-logo"/></div>
+<p class="text-white custom-shadow clock-author font-bold"></p>
 </article>
 <div class="text-white">
 <div class="flex gap-2 lg:gap-4 items-center"><img src="${
@@ -80,5 +84,13 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
  </main>
 `;
 
-// setupCounter(document.querySelector<HTMLButtonElement>("#counter")!);
 handleToggle(document.querySelector<HTMLButtonElement>("#toggle")!);
+generateQuote(
+  document.querySelector<HTMLImageElement>("#refreshQuotes")!,
+  (quote, author) => {
+    const clockQuote = document.querySelector(".clock-quote-text")!;
+    const clockAuthor = document.querySelector(".clock-author")!;
+    clockQuote.textContent = `“${quote}“`;
+    clockAuthor.textContent = `${author}`;
+  }
+);

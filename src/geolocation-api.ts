@@ -8,8 +8,6 @@ const fetchGeolocation = async () => {
   return result;
 };
 
-// fetchGeolocation();
-
 export const { time_zone, languages, country_code, city } =
   await fetchGeolocation();
 export const { abbr, current_time } = time_zone;
